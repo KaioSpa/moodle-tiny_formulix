@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<libraries>
+    <library>
+        <location>amd/src/bundle.js</location>
+        <name>MathLive (with its KaTeX fonts and styles)</name>
+        <version>0.111.0</version>
+        <license>MIT</license>
+        <licenseversion></licenseversion>
+        <repository>https://github.com/arnog/mathlive</repository>
+    </library>
+    <library>
+        <location>amd/src/bundle.js</location>
+        <name>mathml-to-latex</name>
+        <version>1.8.0</version>
+        <license>MIT</license>
+        <licenseversion></licenseversion>
+        <repository>https://github.com/asnunes/mathml-to-latex</repository>
+    </library>
+    <library>
+        <location>amd/src/bundle.js</location>
+        <name>@xmldom/xmldom (bundled inside mathml-to-latex 1.8.0)</name>
+        <version>0.9.x (^0.9.10)</version>
+        <license>MIT</license>
+        <licenseversion></licenseversion>
+        <repository>https://github.com/xmldom/xmldom</repository>
+    </library>
+</libraries>
