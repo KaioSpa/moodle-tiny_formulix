@@ -300,6 +300,15 @@
         return e;
     }
 
+    // link do 402 para cadastro/planos (vem do servidor; só https)
+    function linkPlanos(url) {
+        var a = h('a');
+        if (!/^https:\/\//.test(url)) return a;
+        a.href = url; a.target = '_blank'; a.rel = 'noopener';
+        a.textContent = ' ' + tr('Ver planos');
+        return a;
+    }
+
     function escAttr(s) {
         return String(s).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
     }
@@ -468,16 +477,16 @@
             if (Array.from(document.querySelectorAll('link[rel="stylesheet"]')).some(function (l) { return l.getAttribute('href') === href; })) return;
             var link = h('link'); link.rel = 'stylesheet'; link.href = href; document.head.appendChild(link);
         });
-        var servidor = (opcoes.servidor || '').replace(/\/$/, ''), chave = opcoes.chave || '';
+        var servidor = (opcoes.servidor || 'https://api.for-muli-x.com').replace(/\/$/, ''), chave = opcoes.chave || '';
         var inserir = opcoes.inserir;
         function falhou(status, j) {
             if (status === 401 || status === 403) return new Error(tr('Chave do Formulix inválida para este site.'));
             if (status === 429) return new Error(tr('Muitos pedidos; tente de novo em instantes.'));
-            if (status === 402) return new Error(tr('O limite mensal de inserções do plano acabou. Veja os planos no painel do Formulix.'));
+            if (status === 402) return Object.assign(new Error(tr('O limite mensal de inserções do plano acabou. Veja os planos no painel do Formulix.')), { planos: j && j.planos });
             return new Error(j && j.erro && status === 422 ? j.erro : tr('Sem conexão com o servidor do Formulix.'));
         }
         function chamar(caminho, opcoes) {
-            opcoes.headers = Object.assign({ 'X-Formulix-Chave': chave }, opcoes.headers);
+            if (chave) opcoes.headers = Object.assign({ 'X-Formulix-Chave': chave }, opcoes.headers); // sem chave: o site usa o grátis do domínio
             return fetch(servidor + caminho, opcoes).then(function (r) {
                 return r.json().catch(function () { return null; }).then(function (j) { if (!r.ok) throw falhou(r.status, j); return j; });
             }, function () { throw falhou(0); });
@@ -925,11 +934,12 @@
             gHist.appendChild(bfmt('↷', 'Refazer (Ctrl+Y)', function () { mf.executeCommand('redo'); }));
 
             // ---- Ctrl+V do Word direto no campo: equações novas (OMML) e antigas (Equation 3.0/MathType, via RTF) ----
-            function aviso(txt) {
+            function aviso(txt, planos) {
                 var a = $('.eqd-aviso');
                 a.textContent = txt;
                 a.hidden = !txt;
-                if (txt) setTimeout(function () { a.hidden = true; }, 6000);
+                if (planos) a.appendChild(linkPlanos(planos)); // fica aberto: é o caminho para continuar
+                else if (txt) setTimeout(function () { a.hidden = true; }, 6000);
             }
             mf.addEventListener('paste', function (e) {
                 var d = e.clipboardData;
@@ -1238,7 +1248,7 @@
                 btn.disabled = true;
                 (p ? p.esperar() : Promise.resolve()).then(confirmarJa).then(null, function (e) {
                     var onde = aba === 'formula' ? null : $('[data-pane="' + aba + '"] .eqd-resumo');
-                    if (onde) { onde.textContent = e.message; onde.classList.add('eqd-erro'); } else aviso(e.message);
+                    if (onde) { onde.textContent = e.message; onde.classList.add('eqd-erro'); if (e.planos) onde.appendChild(linkPlanos(e.planos)); } else aviso(e.message, e.planos);
                 }).then(function () { confirmando = false; btn.textContent = texto; atualizarOk(); });
             }
             function confirmarJa() {

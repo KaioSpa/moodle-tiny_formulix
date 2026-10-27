@@ -72,5 +72,6 @@
 })(typeof window !== 'undefined' ? window : globalThis);
 // limite do plano
 Object.assign((typeof window !== 'undefined' ? window : globalThis).FormulixI18n.DIC['ja'], {
-    'O limite mensal de inserções do plano acabou. Veja os planos no painel do Formulix.': 'プランの月間挿入上限に達しました。Formulix のダッシュボードでプランをご確認ください。'
+    'O limite mensal de inserções do plano acabou. Veja os planos no painel do Formulix.': 'プランの月間挿入上限に達しました。Formulix のダッシュボードでプランをご確認ください。',
+    'Ver planos': 'プランを見る'
 });

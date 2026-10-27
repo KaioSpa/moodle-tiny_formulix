@@ -28,7 +28,7 @@ if ($ADMIN->fulltree) {
         'tiny_formulix/servidor',
         get_string('servidor', 'tiny_formulix'),
         get_string('servidor_desc', 'tiny_formulix'),
-        '',
+        'https://api.for-muli-x.com',
         PARAM_RAW_TRIMMED
     ));
     $settings->add(new admin_setting_configtext(

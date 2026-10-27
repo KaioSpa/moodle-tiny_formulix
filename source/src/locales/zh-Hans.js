@@ -33,5 +33,6 @@
 })(typeof window !== 'undefined' ? window : globalThis);
 // limite do plano
 Object.assign((typeof window !== 'undefined' ? window : globalThis).FormulixI18n.DIC['zh-hans'], {
-    'O limite mensal de inserções do plano acabou. Veja os planos no painel do Formulix.': '本套餐的每月插入次数已用完。请在 Formulix 控制台查看套餐。'
+    'O limite mensal de inserções do plano acabou. Veja os planos no painel do Formulix.': '本套餐的每月插入次数已用完。请在 Formulix 控制台查看套餐。',
+    'Ver planos': '查看方案'
 });

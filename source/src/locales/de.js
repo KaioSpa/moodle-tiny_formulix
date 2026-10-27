@@ -317,5 +317,6 @@ Object.assign((typeof window !== 'undefined' ? window : globalThis).FormulixI18n
 });
 // limite do plano
 Object.assign((typeof window !== 'undefined' ? window : globalThis).FormulixI18n.DIC['de'], {
-    'O limite mensal de inserções do plano acabou. Veja os planos no painel do Formulix.': 'Das monatliche Einfügelimit des Tarifs ist erreicht. Die Tarife finden Sie im Formulix-Dashboard.'
+    'O limite mensal de inserções do plano acabou. Veja os planos no painel do Formulix.': 'Das monatliche Einfügelimit des Tarifs ist erreicht. Die Tarife finden Sie im Formulix-Dashboard.',
+    'Ver planos': 'Tarife ansehen'
 });

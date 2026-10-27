@@ -15,7 +15,7 @@ Interface in Portuguese, English, Spanish, French, German, Italian, Japanese, Ch
 
 **This plugin requires the Formulix API.** Calculations, graphs, chemistry and Word conversion run on the service; there is no offline mode. The plugin code is free (GPL-3.0-or-later). The service has a free plan (500 inserts/month) and paid plans; see https://for-muli-x.com/#planos. Live previews do not count as inserts.
 
-1. Create an account at https://painel.for-muli-x.com, register your Moodle domain and copy the public key.
+1. No account is needed to start: without a key, your Moodle domain uses the free plan. When it runs out, the dialog links to sign-up at https://painel.for-muli-x.com; register the domain and choose a plan (the key stays optional).
 2. Review the [terms](https://for-muli-x.com/docs/termos.html) and [privacy policy](https://for-muli-x.com/docs/privacidade.html).
 
 Saved content is plain HTML and stays readable without the service.
@@ -28,14 +28,14 @@ Moodle 4.5 (`requires = 2024100700`). Tested automatically on Moodle 4.5.9 (page
 
 1. Install the ZIP from Site administration → Plugins → Install plugins, or clone this repository into `lib/editor/tiny/plugins/formulix`.
 2. Complete the upgrade and purge caches.
-3. In Site administration → Plugins → Text editors → TinyMCE editor → Formulix, set the API URL `https://api.for-muli-x.com` and your public key. Leaving either empty disables the buttons.
+3. In Site administration → Plugins → Text editors → TinyMCE editor → Formulix, check the API URL (`https://api.for-muli-x.com` by default) and, optionally, a public key. Leaving the URL empty disables the buttons.
 4. Review who has the `tiny/formulix:use` capability: it allows sending the edited item to the external service. Guests never get the buttons.
 
-The key is public (it is visible in the browser) and only works from the domains registered in your account. Never put administrative credentials in it.
+The optional key is public (it is visible in the browser) and only works from the domains registered in your account. Never put administrative credentials in it.
 
 ## Data sent to the service
 
-The browser calls the API directly, always with language, notation and the public key (`X-Formulix-Chave` header):
+The browser calls the API directly, always with language and notation, plus the public key (`X-Formulix-Chave` header) when one is configured:
 
 - **Live previews** (`POST /v1/calc`): when a tab opens and while typing, the operation and the item data (values, expressions, chemical equation, graph functions/points). Not metered. Pasting from Word into the formula field also uses `/v1/calc`, with the clipboard HTML and RTF.
 - **Pasting from Word into the TinyMCE text** (`POST /v1/inserir`, type `word`): only when the pasted HTML contains Word equations, the whole clipboard HTML and RTF are sent. One insert per converted equation; without quota or connection the original HTML is pasted. Pastes without equations never leave the browser.

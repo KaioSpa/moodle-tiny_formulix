@@ -52,7 +52,7 @@ class plugininfo extends \editor_tiny\plugin implements \editor_tiny\plugin_with
         ?\editor_tiny\editor $editor = null
     ): bool {
         return isloggedin() && !isguestuser() && has_capability('tiny/formulix:use', $context)
-            && !empty(get_config('tiny_formulix', 'servidor')) && !empty(get_config('tiny_formulix', 'chave'));
+            && !empty(get_config('tiny_formulix', 'servidor'));
     }
 
     /**

@@ -37,5 +37,6 @@
 })(typeof window !== 'undefined' ? window : globalThis);
 // limite do plano
 Object.assign((typeof window !== 'undefined' ? window : globalThis).FormulixI18n.DIC['hi'], {
-    'O limite mensal de inserções do plano acabou. Veja os planos no painel do Formulix.': 'प्लान की मासिक इंसर्शन सीमा पूरी हो गई है। Formulix डैशबोर्ड में प्लान देखें।'
+    'O limite mensal de inserções do plano acabou. Veja os planos no painel do Formulix.': 'प्लान की मासिक इंसर्शन सीमा पूरी हो गई है। Formulix डैशबोर्ड में प्लान देखें।',
+    'Ver planos': 'प्लान देखें'
 });

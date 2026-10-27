@@ -40,5 +40,6 @@
 })(typeof window !== 'undefined' ? window : globalThis);
 // limite do plano
 Object.assign((typeof window !== 'undefined' ? window : globalThis).FormulixI18n.DIC['zh-hant'], {
-    'O limite mensal de inserções do plano acabou. Veja os planos no painel do Formulix.': '本方案的每月插入次數已用完。請在 Formulix 控制台查看方案。'
+    'O limite mensal de inserções do plano acabou. Veja os planos no painel do Formulix.': '本方案的每月插入次數已用完。請在 Formulix 控制台查看方案。',
+    'Ver planos': '查看方案'
 });

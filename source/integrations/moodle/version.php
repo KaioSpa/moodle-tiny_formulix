@@ -24,8 +24,8 @@
 defined('MOODLE_INTERNAL') || die();
 
 $plugin->component = 'tiny_formulix';
-$plugin->version = 2026102700;
+$plugin->version = 2026102701;
 $plugin->requires = 2024100700;
 $plugin->supported = [405, 405];
-$plugin->release = '0.1.1';
+$plugin->release = '0.1.2';
 $plugin->maturity = MATURITY_STABLE;

@@ -288,5 +288,6 @@ Object.assign((typeof window !== 'undefined' ? window : globalThis).FormulixI18n
 });
 // limite do plano
 Object.assign((typeof window !== 'undefined' ? window : globalThis).FormulixI18n.DIC['es-419'], {
-    'O limite mensal de inserções do plano acabou. Veja os planos no painel do Formulix.': 'Se alcanzó el límite mensual de inserciones del plan. Vea los planes en el panel de Formulix.'
+    'O limite mensal de inserções do plano acabou. Veja os planos no painel do Formulix.': 'Se alcanzó el límite mensual de inserciones del plan. Vea los planes en el panel de Formulix.',
+    'Ver planos': 'Ver planes'
 });

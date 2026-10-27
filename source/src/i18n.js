@@ -287,6 +287,7 @@
         'Não consegui ler essa equação antiga do Word aqui. Cole direto no texto do editor: ela entra como imagem.': 'Could not read this old Word equation here. Paste it straight into the editor text: it goes in as an image.',
         '{0} equações coladas do Word.': '{0} equations pasted from Word.',
         'O limite mensal de inserções do plano acabou. Veja os planos no painel do Formulix.': 'This plan’s monthly insertion limit has been reached. See the plans in the Formulix dashboard.',
+        'Ver planos': 'See plans',
         'Chave do Formulix inválida para este site.': 'Formulix key is not valid for this site.',
         'Muitos pedidos; tente de novo em instantes.': 'Too many requests; try again in a moment.',
         'Sem conexão com o servidor do Formulix.': 'Cannot reach the Formulix server.'

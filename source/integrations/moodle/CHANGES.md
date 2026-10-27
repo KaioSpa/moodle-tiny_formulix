@@ -1,5 +1,10 @@
 # Changes
 
+## 0.1.2 (2026102701)
+
+- The public key is optional: without it, the Moodle domain uses the free plan, and the dialog links to sign-up when it runs out.
+- The API URL defaults to https://api.for-muli-x.com; an empty URL still disables the buttons.
+
 ## 0.1.1 (2026102700)
 
 - Stable release for Moodle 4.5.
