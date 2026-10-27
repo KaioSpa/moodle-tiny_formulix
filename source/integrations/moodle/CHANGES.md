@@ -1,6 +1,10 @@
 # Changes
 
-## 0.1.0 alpha (2026101500)
+## 0.1.1 (2026102700)
+
+- Stable release for Moodle 4.5.
+
+## 0.1.0 (2026101500)
 
 First public release for Moodle 4.5.
 

@@ -15,7 +15,7 @@
 // along with Moodle. If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Metadados da versão alpha para Moodle 4.5.
+ * Metadados da versão para Moodle 4.5.
  *
  * @package tiny_formulix
  * @copyright 2026 Formulix contributors
@@ -24,8 +24,8 @@
 defined('MOODLE_INTERNAL') || die();
 
 $plugin->component = 'tiny_formulix';
-$plugin->version = 2026101500;
+$plugin->version = 2026102700;
 $plugin->requires = 2024100700;
 $plugin->supported = [405, 405];
-$plugin->release = '0.1.0';
-$plugin->maturity = MATURITY_ALPHA;
+$plugin->release = '0.1.1';
+$plugin->maturity = MATURITY_STABLE;

@@ -1,4 +1,4 @@
-# Formulix for Moodle (tiny_formulix) — alpha
+# Formulix for Moodle (tiny_formulix)
 
 TinyMCE plugin that adds math formulas, long-hand arithmetic (long division, multiplication with carries, subtraction with borrowing), function graphs and chemistry to Moodle. Built for teachers, schools and educational publishers. Website: https://for-muli-x.com
 
